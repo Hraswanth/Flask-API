@@ -40,23 +40,23 @@ def hello_world():
 class HelloWorld(Resource):
     def get(self, value1, value2, calc):
         if calc == "add":
-            val = add(value1, value2)
+            val = add(int(value1), int(value2))
             return {"Output": val,
                     "Status": "Success"}
         if calc == "subtract":
-            val = subtract(value1, value2)
+            val = subtract(int(value1), int(value2))
             return {"Output": val,
                     "Status": "Success"}
         if calc == "divide":
-            val = divide(value1, value2)
+            val = divide(int(value1), int(value2))
             return {"Output": val,
                     "Status": "Success"}
         if calc == "multiply":
-            val = multiply(value1, value2)
+            val = multiply(int(value1), int(value2))
             return {"Output": val,
                     "Status": "Success"}
         if calc == "power":
-            val = powe(value1, value2)
+            val = powe(int(value1), int(value2))
             return {"Output": val,
                     "Status": "Success"}
 
