@@ -14,19 +14,19 @@ app.secret_key = os.urandom(100)
 
 
 def add(a, b):
-    return
+    return a+b
 
 
 def subtract(a, b):
-    return
+    return a-b
 
 
 def divide(a, b):
-    return
+    return a/b
 
 
 def multiply(a, b):
-    return
+    return a*b
 
 
 @app.route('/')
