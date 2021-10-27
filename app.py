@@ -29,21 +29,36 @@ def multiply(a, b):
     return a*b
 
 
+def powe(a, b):
+    return a**b
+
 @app.route('/')
 def hello_world():
-    return 'Hello World!'
+    return 'Welcome to Calc Flask API'
 
 
 class HelloWorld(Resource):
     def get(self, value1, value2, calc):
         if calc == "add":
-            add(value1, value2)
+            val = add(int(value1), int(value2))
+            return {"Output": val,
+                    "Status": "Success"}
         if calc == "subtract":
-            subtract(value1, value2)
+            val = subtract(int(value1), int(value2))
+            return {"Output": val,
+                    "Status": "Success"}
         if calc == "divide":
-            divide(value1, value2)
+            val = divide(int(value1), int(value2))
+            return {"Output": val,
+                    "Status": "Success"}
         if calc == "multiply":
-            multiply(value1, value2)
+            val = multiply(int(value1), int(value2))
+            return {"Output": val,
+                    "Status": "Success"}
+        if calc == "power":
+            val = powe(int(value1), int(value2))
+            return {"Output": val,
+                    "Status": "Success"}
 
 
 api.add_resource(HelloWorld, "/<string:value1>/<string:value2>/<string:calc>")
